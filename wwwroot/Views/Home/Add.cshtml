@@ -1,0 +1,61 @@
+﻿@model ShoppingCartApplication.ViewModels.ProductVM
+
+@{
+    ViewBag.Title = "Add an Item";
+}
+<div class="spacer-heading-height"></div>
+
+<h2>@ViewBag.Title</h2>
+
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                <div class="row" style="padding-bottom: 0px;">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.DisplayNameFor(model => model.ProductID)
+
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.DisplayNameFor(model => model.ProductName)
+
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.DisplayNameFor(model => model.Price)
+
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        Quantity
+                    </div>
+                </div>
+
+                <div class="row"><hr /></div>
+
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.DisplayFor(model => model.ProductID)
+                        @Html.HiddenFor(model => model.ProductID)
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.DisplayFor(model => model.ProductName)
+                        @Html.HiddenFor(model => model.ProductName)
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.DisplayFor(model => model.Price)
+                        @Html.HiddenFor(model => model.Price)
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3">
+                        @Html.Raw("<input type='text' name='QtyOrdered' id='quantity' value='" + ViewBag.Qty + "'/>")
+                        @Html.Raw("<input type='hidden' id='hidden' name='sessionID' value='" + System.Web.HttpContext.Current.Session.SessionID + "' ")
+                    </div>
+                </div>
+            </div>
+
+        <input type="submit" value="Update" class="btn btn-default" /> @Html.ActionLink("Cancel", "Index")
+    }
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

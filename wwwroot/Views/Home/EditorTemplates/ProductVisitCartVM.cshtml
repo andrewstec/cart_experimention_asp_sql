@@ -1,0 +1,26 @@
+﻿@model ShoppingCartApplication.Models.ProductVisitCartVM
+
+<div class="form-group">
+    @Html.ValidationSummary(true)
+    <div class="row">
+        <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">@Html.ActionLink("Remove Item", "RemoveItem", new { id = Model.ProductID})</div>
+        <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+            @Html.HiddenFor(model => model.ProductID)
+            @Html.DisplayFor(model => model.ProductID)
+        </div>
+        <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+            @Html.HiddenFor(model => model.ProductName)
+            @Html.DisplayFor(model => model.ProductName)
+        </div>
+        <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+            @Html.ValidationMessageFor(model => model.QtyOrdered)
+            @Html.EditorFor(model => model.QtyOrdered)
+        </div>
+        <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+            @Html.DisplayFor(model => model.Price)
+        </div>
+        <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+            @((Model.Price * Model.QtyOrdered).ToString())
+        </div>
+    </div>
+</div>

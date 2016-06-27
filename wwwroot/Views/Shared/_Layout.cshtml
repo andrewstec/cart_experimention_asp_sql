@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>.spacer-heading-height {
+    margin-top: 120px;
+}</style>
+    <script src="~/Scripts/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-bottom: 40px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home">
+                    <img id="logo" class="hidden-xs hidden-sm" src="~/Content/Images/logo-revised2.png" width="250" />
+                    <img id="logo" class="hidden-md hidden-lg" src="~/Content/Images/logo-revised2.png" width="200" style="margin-top: -3px;"/>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Home/Index" class="hidden-xs hidden-sm pull-right" style="padding-top: 50px; padding-bottom: 0px; margin-bottom: 0px;">Shop</a></li>
+                    <li><a class="hidden-xs hidden-sm pull-right" style="padding-top: 50px; padding-bottom: 0px; margin-bottom: 0px;">|</li>
+                    <li><a href="~/Home/ViewCart" class="hidden-xs hidden-sm pull-right" style="padding-top: 50px; padding-bottom: 0px; margin-bottom: 0px;">View Cart</a></li>
+                    <li><a href="~/Home/Index" class="hidden-lg hidden-md" style="padding-top: 50px; padding-bottom: 0px; margin-bottom: 0px;">Shop</a></li>
+                    <li><a href="~/Home/ViewCart" class="hidden-lg hidden-md" style="padding-bottom: 0px; margin-bottom: 0px;">View Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="container body-content">
+            <p>&copy; @DateTime.Now.Year - SportFactory™ Corp.</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

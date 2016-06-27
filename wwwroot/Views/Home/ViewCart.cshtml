@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ShoppingCartApplication.Models.ProductVisitCartVM>
+
+@{
+    ViewBag.Title = "Cart Contets";
+}
+
+<div class="spacer-heading-height"></div>
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("ViewCart", "Home", FormMethod.Post))
+{
+
+
+        <div style="padding-bottom: 0px; margin-left: 13px;" class="row">
+                <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+
+                </div>
+                <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+                    @Html.DisplayNameFor(model => model.ProductID)
+                </div>
+                <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </div>
+                <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+                    @Html.DisplayNameFor(model => model.QtyOrdered)
+                </div>
+                <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </div>
+                <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+                    Total Price
+                </div>
+            <div style="padding-top:20px; padding-bottom: 5px;" class="row"><hr></div>
+                @Html.EditorForModel()
+            </div>
+
+
+            <input style="display: inline;" type="submit" value="Save Order" />
+            <input type="button" value="Go to Checkout" onclick="location.href='#'" />
+                    <input type="button" value="Cancel Order" onclick="location.href='/Home/ThankYou'" />
+}
+
+
+
+
